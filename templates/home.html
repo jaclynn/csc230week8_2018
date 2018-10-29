@@ -1,26 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
-<h3>Welcome. Today is {{ weather }}</h3>
-{% if weather=="storms" %}
-<h3>Take your umbrella!</h3>
-{% else %}
-<h3>Have a nice day!</h3>
-{% endif %}
-<h1>Hello World! after jinja :)</h1>
-<ol>
+
+<div class="row">
+    <a href="/chat">Go to chat!</a><br/>
     {% for user in users %}
-        <li>{{ user }}</li>
+    <div class="col s12 m6 l2 amber darken-1"><p>{{ user }}</p></div>
     {% endfor %}
-</ol>
-<table style="background:yellow">
-    <thead>
-    <td>Name</td>
-    </thead>
-    {% for user in users %}
-    <tr><td>{{ user }}</td></tr>
-    {% endfor %}
-</table>
-{% for user in users %}
-    {{ user }}<br/><br/>
-{% endfor %}
+</div>
+
 {% endblock %}
